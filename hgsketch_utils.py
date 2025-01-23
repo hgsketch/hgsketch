@@ -2,35 +2,20 @@ import numpy as np
 import gudhi as gd
 from scipy.sparse import coo_matrix
 import itertools
-import random
 import os
 import torch
-
 from sklearn import svm
-from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, make_scorer, roc_auc_score, average_precision_score
-from sklearn.model_selection import KFold, cross_val_score
-from sklearn.linear_model import LogisticRegression
-from sklearn.multiclass import OneVsRestClassifier
-from scipy.spatial.distance import pdist, squareform, cdist
-
-from sklearn.preprocessing import label_binarize
-from sklearn.metrics import roc_curve, auc
-
-import warnings
-from sklearn.exceptions import UndefinedMetricWarning
-
-
 from sklearn.metrics import accuracy_score, roc_auc_score
 from sklearn.model_selection import KFold
 from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
 from sklearn.multiclass import OneVsRestClassifier
-import numpy as np
-import random
+from scipy.spatial.distance import pdist, squareform
+from sklearn.preprocessing import label_binarize
 from itertools import combinations
+import random
+import warnings
+from sklearn.exceptions import UndefinedMetricWarning
 import zipfile
-
-warnings.filterwarnings("ignore", category=UndefinedMetricWarning)
 
 def load_dataset(ds_name, data_dir='./Dataset'):
     if not os.path.exists(data_dir):
